@@ -1,0 +1,371 @@
+﻿
+@{
+    ViewBag.Title = "QuoteForRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script>
+        $('.input-append.date').datepicker({
+        });
+    </script>
+    <style>
+        .form-group {
+            margin-bottom: 2px;
+        }
+
+        .input-append.date .add-on i, .input-prepend.date .add-on i {
+            height: 0px;
+        }
+
+        .form-group input[type="text"] {
+            height: 24px;
+            font-size: 14px;
+            line-height: 10px;
+        }
+
+        .row label {
+            font-size: 12px;
+        }
+
+        .displayVal {
+            padding-top: 7px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+
+        .request-details {
+            border-style: solid;
+            border-width: 1px;
+            margin-bottom: 2px;
+        }
+
+        .form-button {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+    </style>
+}
+@section topscripts {
+
+}
+<div class="row">
+    @*<h2>QuoteForRequest</h2>*@
+    <select class="btn btn-default dropdown-toggle" id="menu1" data-toggle="dropdown">
+        <option value="">-- Select --</option>
+        <option value="ManageRequest">Manage Request</option>
+        <option value="ManageRequest">Quote For Request</option>
+        <option value="ManageRequest">View Rate Request</option>
+    </select>
+</div>
+<div class="row">
+    <h2></h2>
+    <div class="col-xs-3 col-sm-3">
+        <div class="row form-horizontal">
+            <h4>Quote Details Search</h4>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Quote For Date</label>
+                <div class="input-append date col-md-6">
+                    <input type="text" class="span2 form-control"><span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Quote To Date</label>
+                <div class="input-append date col-md-6">
+                    <input type="text" class="span2 form-control"><span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Request For Date</label>
+                <div class="input-append date col-md-6">
+                    <input type="text" class="span2 form-control"><span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Request To Date</label>
+                <div class="input-append date col-md-6">
+                    <input type="text" class="span2 form-control"><span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Origin</label>
+                <div class="col-md-6">
+                    <input type="text" class="span2 form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Destinatin</label>
+                <div class="col-md-6">
+                    <input type="text" class="span2 form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label">Request Id</label>
+                <div class=" col-md-6">
+                    <input type="text" class="span2 form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 control-label"></label>
+                <div class="col-md-6">
+                    <button>Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="row form-horizontal">
+            <div class="col-xs-3 col-sm-6">
+                <label> Request Id</label>
+                <label> Request001</label>
+                <label> Request002</label>
+                <label> Request003</label>
+            </div>
+            <div class="col-xs-3 col-sm-6">
+                <label>Quote Id</label>
+                <label>----------------</label>
+                <label>----------------</label>
+                <label>Quote001</label>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-7" style="overflow-y: scroll;height:450px;">
+        <h4>Request Quote Details</h4>
+        <div class="row request-details">
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Request Id:</label>
+                    <label class="displayVal">Request Id</label>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Shipping Type:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Origin:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Request Expiry Date:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-5">
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Shipping Mode:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Destination:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Status:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-horizontal form-button">
+                <div class="col-md-4">
+                    <button>Make Quote</button>
+                </div>
+                <div class="col-md-4">
+                    <div class="row form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-6 control-label">Company Name:</label>
+                            <label class="displayVal"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="row request-details">
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Request Id:</label>
+                    <label class="displayVal">Request Id</label>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Shipping Type:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Origin:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Request Expiry Date:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-6">
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Shipping Mode:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Destination:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Status:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-horizontal form-button">
+                <div class="col-md-4">
+                    <button>Cancel</button>
+                </div>
+                <div class="col-md-4">
+                    <div class="row form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-6 control-label">Company Name:</label>
+                            <label class="displayVal"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="row request-details">
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Request Id:</label>
+                    <label class="displayVal">Request Id</label>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Shipping Type:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Origin:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Request Expiry Date:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-6">
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Shipping Mode:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Destination:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-6 control-label">Status:</label>
+                        <label class="displayVal"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-horizontal form-button">
+                <div class="col-md-4">
+                    <button>Cancel</button>
+                </div>
+                <div class="col-md-4">
+                    <div class="row form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-6 control-label">Company Name:</label>
+                            <label class="displayVal"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 col-sm-2">
+        <div class="row form-horizontal">
+            <h4>Rate Request</h4>
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">View All:</label>
+                    <label class="displayVal"></label>
+                </div>
+            </div>
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Drafts:</label>
+                    <label class="displayVal"></label>
+                </div>
+            </div>
+
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Sent:</label>
+                    <label class="displayVal"></label>
+                </div>
+            </div>
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Can:</label>
+                    <label class="displayVal"></label>
+                </div>
+            </div>
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Drafts:</label>
+                    <label class="displayVal"></label>
+                </div>
+            </div>
+            <div class="row form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Drafts:</label>
+                    <label class="displayVal"></label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
